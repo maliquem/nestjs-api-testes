@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/home/node/app
+
+  db:
+    image: mongo:6.0.2
+    environment:
+      - MONGO_INITDDB_ROOT_USERNAME=root
+      - MONGO_INITDDB_ROOT_PASSWORD=root
