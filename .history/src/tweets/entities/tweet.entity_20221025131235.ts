@@ -1,21 +1,18 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Prop } from '@nestjs/mongoose';
 
 export type TweetProps = {
   content: string;
   screen_name: string;
 };
 
-@Schema()
 export class Tweet {
   constructor(props: TweetProps) {
     Object.assign(this, props);
   }
 
-  @Prop({ required: true })
+  @Prop()
   content: string;
 
-  @Prop({ required: true })
+  @Prop()
   screen_name: string;
 }
-
-export const TweetSchema = SchemaFactory.createForClass(Tweet);
