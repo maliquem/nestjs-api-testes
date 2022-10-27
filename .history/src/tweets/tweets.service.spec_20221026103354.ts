@@ -9,7 +9,7 @@ describe('TweetsService', () => {
 
   beforeEach(async () => {
     const uri =
-      'mongodb://admin:admin@mongo:27017/tweet_service_test?authSource=admin';
+      'mongodb://admin:admin@localhost:27017/tweet_test?authSource=admin';
     module = await Test.createTestingModule({
       imports: [
         MongooseModule.forRoot(uri),
@@ -29,8 +29,8 @@ describe('TweetsService', () => {
     expect(service).toBeDefined();
   });
 
-  it('should create a tweet', async () => {
-    const tweet = await service.create({
+  it('should create a tweet', () => {
+    const tweet = service.create({
       content: 'Hello World',
       screen_name: 'Luiz Carlos',
     });

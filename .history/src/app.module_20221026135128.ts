@@ -3,12 +3,17 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TweetsModule } from './tweets/tweets.module';
+import { Tweet, TweetSchema } from './tweets/entities/tweet.entity';
 
 const uri =
-  'mongodb://admin:admin@mongo:27017/tweet_service_test?authSource=admin';
+  'mongodb://admin:admin@localhost:27017/tweet_entity_test?authSource=admin';
 
 @Module({
-  imports: [MongooseModule.forRoot(uri), TweetsModule],
+  imports: [
+    MongooseModule.forRoot(uri),
+    MongooseModule.forFeature([{ name: Tweet.name, schema: TweetSchema }]),
+    TweetsModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

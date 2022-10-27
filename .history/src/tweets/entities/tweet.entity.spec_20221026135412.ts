@@ -19,7 +19,7 @@ describe('Tweet Tests', () => {
 
     beforeEach(async () => {
       conn = await mongoose.connect(
-        'mongodb://admin:admin@mongo:27017/tweet_entity_test?authSource=admin',
+        'mongodb://admin:admin@localhost:27017/tweet_entity_test?authSource=admin',
       );
     });
 

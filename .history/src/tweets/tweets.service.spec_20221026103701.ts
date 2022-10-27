@@ -9,7 +9,7 @@ describe('TweetsService', () => {
 
   beforeEach(async () => {
     const uri =
-      'mongodb://admin:admin@mongo:27017/tweet_service_test?authSource=admin';
+      'mongodb://admin:admin@localhost:27017/tweet_test?authSource=admin';
     module = await Test.createTestingModule({
       imports: [
         MongooseModule.forRoot(uri),

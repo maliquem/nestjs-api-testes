@@ -5,7 +5,7 @@ import { AppService } from './app.service';
 import { TweetsModule } from './tweets/tweets.module';
 
 const uri =
-  'mongodb://admin:admin@mongo:27017/tweet_service_test?authSource=admin';
+  'mongodb://admin:admin@localhost:27017/tweet_entity_test?authSource=admin';
 
 @Module({
   imports: [MongooseModule.forRoot(uri), TweetsModule],
